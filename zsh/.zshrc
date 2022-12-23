@@ -63,7 +63,6 @@ function mandump {
 # Path modiifications
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/Cellar/php@7.3/7.3.23/bin:$PATH"
 export NODE_PATH='/usr/local/lib/node_modules'
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 
@@ -101,10 +100,10 @@ alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias storm="phpstorm"
 alias finder="open"
 alias composer="php /usr/local/bin/composer"
-alias switchphp="brew unlink php && brew link --overwrite --force $1"
 alias gffs="git flow feature start"
 alias jsc="/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Helpers/jsc"
 alias a=artisan
+alias vim=nvim
 
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
