@@ -27,3 +27,74 @@ local use = require('packer').use
 
 use('wbthomason/packer.nvim') -- Let packer manage itself
 
+use({
+  'airblade/vim-rooter',
+  setup = function()
+    vim.g.rooter_manual_only = 1
+  end,
+  config = function()
+    vim.cmd('Rooter')
+  end,
+})
+--use('farmergreg/vim-lastplace')
+--use('tpope/vim-commentary')
+--use('tpope/vim-repeat')
+--use('tpope/vim-surround')
+--use('tpope/vim-sleuth') -- Indent autodetection with editorconfig support
+--use('jessarcher/vim-heritage') -- Automatically create parent dirs when saving
+--use('nelstrom/vim-visual-star-search')
+
+use({
+  'jessarcher/onedark.nvim',
+  config = function()
+    vim.cmd('colorscheme onedark')
+
+    -- Hide the characters in FloatBorder
+    vim.api.nvim_set_hl(0, 'FloatBorder', {
+      fg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
+      bg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
+    })
+
+    -- Make the StatusLineNonText background the same as StatusLine
+    vim.api.nvim_set_hl(0, 'StatusLineNonText', {
+      fg = vim.api.nvim_get_hl_by_name('NonText', true).foreground,
+      bg = vim.api.nvim_get_hl_by_name('StatusLine', true).background,
+    })
+
+    -- Hide the characters in CursorLineBg
+    vim.api.nvim_set_hl(0, 'CursorLineBg', {
+      fg = vim.api.nvim_get_hl_by_name('CursorLine', true).background,
+      bg = vim.api.nvim_get_hl_by_name('CursorLine', true).background,
+    })
+
+    vim.api.nvim_set_hl(0, 'NvimTreeIndentMarker', { fg = '#30323E' })
+    vim.api.nvim_set_hl(0, 'IndentBlanklineChar', { fg = '#2F313C' })
+  end,
+})
+
+use({
+  'nvim-telescope/telescope.nvim',
+  requires = {
+    { 'nvim-lua/plenary.nvim' },
+    { 'kyazdani42/nvim-web-devicons' },
+    { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+    { 'nvim-telescope/telescope-live-grep-args.nvim' },
+  },
+  config = function()
+    require('user.plugins.telescope')
+  end,
+})
+
+
+-- Automatically install plugins on first run
+if packer_bootstrap then
+  require('packer').sync()
+end
+
+-- Automatically regenerate compiled loader file on save
+vim.cmd([[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile>
+  augroup end
+]])
