@@ -1,0 +1,9 @@
+[user]
+	name = Simon vom Eyser
+	email = simon.vom.eyser@gmail.com
+[core]
+	excludesFile = ~/.gitignore
+	autocrlf = input
+	editor = vim
+[init]
+	defaultBranch = main
