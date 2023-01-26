@@ -14,17 +14,31 @@ local packer_bootstrap = ensure_packer()
 require('packer').reset()
 require('packer').init({
   compile_path = vim.fn.stdpath('data')..'/site/plugin/packer_compiled.lua',
-  --display = {
-  --  open_fn = function()
-  --    return require('packer.util').float({ border = 'solid' })
-  --  end,
-  --},
+  display = {
+    open_fn = function()
+      return require('packer.util').float({ border = 'solid' })
+    end,
+  },
 })
 
 local use = require('packer').use
 
 -- Packer can manage itself.
 use('wbthomason/packer.nvim')
+
+-- One Dark theme.
+use({
+  'jessarcher/onedark.nvim',
+  config = function()
+    vim.cmd('colorscheme onedark')
+
+    vim.api.nvim_set_hl(0, 'FloatBorder', {
+      fg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
+      bg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
+    })
+  end,
+})
+
 
 -- Commenting support.
 use('tpope/vim-commentary')
@@ -41,7 +55,7 @@ use('tpope/vim-unimpaired')
 -- Indent autodetection with editorconfig support.
 use('tpope/vim-sleuth')
 
--- Allow plugins to enable repeating of commands.
+-- Allow plugins to enable repeating of commands
 use('tpope/vim-repeat')
 
 -- Add more languages.
@@ -118,6 +132,29 @@ use({
     vim.g.pasta_disabled_filetypes = { 'fugitive' }
   end,
 })
+
+-- Fuzzy finder
+use({
+  'nvim-telescope/telescope.nvim',
+  requires = {
+    'nvim-lua/plenary.nvim', -- hard requirement 
+    'kyazdani42/nvim-web-devicons', -- icons if we have nerd fonts
+    'nvim-telescope/telescope-live-grep-args.nvim',
+    { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+  },
+  config = function()
+    require('user/plugins/telescope')
+  end,
+})
+
+-- File tree sidebar
+-- use({
+--   'kyazdani42/nvim-tree.lua',
+--   requires = 'kyazdani42/nvim-web-devicons',
+--   config = function()
+--     require('user/plugins/nvim-tree')
+--   end,
+-- })
 
 -- Automatically set up your configuration after cloning packer.nvim
 -- Put this at the end after all plugins
