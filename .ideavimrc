@@ -1,0 +1,17 @@
+set surround
+set commentary
+imap jk <Esc>
+vmap jk <Esc>
+
+packadd matchit
+
+" These create newlines like o and O but stay in normal mode
+" nmap zj o<Esc>k
+" nmap zk O<Esc>j
+
+let mapleader ="\<Space>"
+
+nmap <leader>g :action GotoDeclaration<cr>
+nmap <leader>b :action Back<cr>
+nmap <leader>f :action Forward<cr>
+nmap <leader>p :action GotoFile<cr>
