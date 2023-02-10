@@ -108,4 +108,4 @@ alias vim=nvim
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
-source ~/.docker/init-zsh.sh || true # Added by Docker Desktop
+source /Users/simonvomeyser/.docker/init-zsh.sh || true # Added by Docker Desktop
