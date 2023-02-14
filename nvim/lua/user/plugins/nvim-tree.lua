@@ -2,9 +2,6 @@ require('nvim-tree').setup({
   git = {
     ignore = false,
   },
-  list = {
-    { key = "u", action = "dir_up" },
-  },
   renderer = {
     group_empty = true,
     icons = {
@@ -19,5 +16,4 @@ require('nvim-tree').setup({
 })
 
 vim.keymap.set('n', '<Leader>nn', ':NvimTreeFindFileToggle<CR>') 
-vim.keymap.set('n', '<Leader>nf', ':NvimTreeFindFile<CR>') 
 
