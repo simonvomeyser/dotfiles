@@ -233,7 +233,6 @@ use({
     require('nvim-treesitter.install').update({ with_sync = true })
   end,
   requires = {
-    'JoosepAlviste/nvim-ts-context-commentstring',
     'nvim-treesitter/nvim-treesitter-textobjects',
   },
   config = function()
