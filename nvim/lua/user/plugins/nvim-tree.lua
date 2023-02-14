@@ -2,6 +2,9 @@ require('nvim-tree').setup({
   git = {
     ignore = false,
   },
+  list = {
+    { key = "u", action = "dir_up" },
+  },
   renderer = {
     group_empty = true,
     icons = {
