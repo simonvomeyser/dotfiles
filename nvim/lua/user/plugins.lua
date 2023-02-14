@@ -226,6 +226,20 @@ use({
   requires = 'tpope/vim-rhubarb',
 })
 
+-- Improved syntax highlighting
+-- use({
+--   'nvim-treesitter/nvim-treesitter',
+--   run = function()
+--     require('nvim-treesitter.install').update({ with_sync = true })
+--   end,
+--   requires = {
+--     'JoosepAlviste/nvim-ts-context-commentstring',
+--     'nvim-treesitter/nvim-treesitter-textobjects',
+--   },
+--   config = function()
+--     require('user/plugins/treesitter')
+--   end,
+-- })
 
 -- Automatically set up your configuration after cloning packer.nvim
 -- Put this at the end after all plugins
