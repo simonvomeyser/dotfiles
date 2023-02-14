@@ -14,4 +14,7 @@ let mapleader ="\<Space>"
 nmap <leader>g :action GotoDeclaration<cr>
 nmap <leader>b :action Back<cr>
 nmap <leader>f :action Forward<cr>
-nmap <leader>p :action GotoFile<cr>
+nmap <leader>f :action GotoFile<cr>
+
+:set relativenumber
+:set number
