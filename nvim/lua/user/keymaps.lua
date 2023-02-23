@@ -33,12 +33,12 @@ vim.keymap.set('n', '<Leader>7', ':nohlsearch<CR>')
 vim.keymap.set('n', '<Leader>x', ':!open %<CR><CR>')
 
 -- Move lines up and down.
-vim.keymap.set('i', '<A-j>', '<Esc>:move .+1<CR>==gi')
-vim.keymap.set('i', '<A-k>', '<Esc>:move .-2<CR>==gi')
-vim.keymap.set('n', '<A-j>', ':move .+1<CR>==')
-vim.keymap.set('n', '<A-k>', ':move .-2<CR>==')
-vim.keymap.set('v', '<A-j>', ":move '>+1<CR>gv=gv")
-vim.keymap.set('v', '<A-k>', ":move '<-2<CR>gv=gv")
+vim.keymap.set('i', '<C-j>', '<Esc>:move .+1<CR>==gi')
+vim.keymap.set('i', '<C-k>', '<Esc>:move .-2<CR>==gi')
+vim.keymap.set('n', '<C-j>', ':move .+1<CR>==')
+vim.keymap.set('n', '<C-k>', ':move .-2<CR>==')
+vim.keymap.set('v', '<C-j>', ":move '>+1<CR>gv=gv")
+vim.keymap.set('v', '<C-k>', ":move '<-2<CR>gv=gv")
 
 -- Quickly save
 vim.keymap.set('n', '<Leader>w', ":w<Enter>")
