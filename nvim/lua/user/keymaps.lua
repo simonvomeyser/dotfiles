@@ -43,4 +43,3 @@ vim.keymap.set('v', '<C-k>', ":move '<-2<CR>gv=gv")
 -- Quickly save
 vim.keymap.set('n', '<Leader>w', ":w<Enter>")
 
-
