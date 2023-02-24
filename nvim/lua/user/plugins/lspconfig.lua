@@ -58,10 +58,10 @@ vim.keymap.set('n', 'yr', ':Telescope lsp_references<CR>')
 vim.keymap.set('n', 'yk', '<cmd>lua vim.lsp.buf.hover()<CR>')
 vim.keymap.set('n', '<Leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
 
--- Commands
-vim.api.nvim_create_user_command('Format', vim.lsp.buf.format)
+--Commands
+vim.api.nvim_create_user_command('Format', vim.lsp.buf.formatting, {})
 
--- Diagnostic configuration
+--Diagnostic configuration
 vim.diagnostic.config({
   virtual_text = false,
   float = {

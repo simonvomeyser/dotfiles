@@ -66,6 +66,9 @@ use('tpope/vim-sleuth')
 -- Allow plugins to enable repeating of commands
 use('tpope/vim-repeat')
 
+-- Tmux integration
+use('christoomey/vim-tmux-navigator')
+
 -- Add more languages.
 use('sheerun/vim-polyglot')
 
@@ -142,7 +145,7 @@ use({
 use({
   'nvim-telescope/telescope.nvim',
   requires = {
-    'nvim-lua/plenary.nvim', -- hard requirement 
+    'nvim-lua/plenary.nvim', -- hard requirement
     'kyazdani42/nvim-web-devicons', -- icons if we have nerd fonts
     'nvim-telescope/telescope-live-grep-args.nvim',
     { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },

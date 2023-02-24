@@ -42,6 +42,7 @@ vim.keymap.set('v', '<C-k>', ":move '<-2<CR>gv=gv")
 
 -- Quickly save
 vim.keymap.set('n', '<Leader>w', ":w<Enter>")
+vim.keymap.set('n', '<Leader>s', ":w<Enter>")
 
 vim.keymap.set('n', 'L', ":BufferLineCycleNext<CR>")
 vim.keymap.set('n', 'H', ":BufferLineCyclePrev<CR>")
