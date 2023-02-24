@@ -36,7 +36,7 @@ use({
       fg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
       bg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
     })
-  
+
     vim.api.nvim_set_hl(0, 'StatusLineNonText', {
       fg = vim.api.nvim_get_hl_by_name('NonText', true).foreground,
       bg = vim.api.nvim_get_hl_by_name('StatusLine', true).background,
@@ -50,6 +50,9 @@ use({
 
 -- Commenting support.
 use('tpope/vim-commentary')
+
+-- Emmet support
+use('mattn/emmet-vim')
 
 -- Add, change, and delete surrounding text.
 use('tpope/vim-surround')

@@ -46,3 +46,5 @@ vim.keymap.set('n', '<Leader>s', ":w<Enter>")
 
 vim.keymap.set('n', 'L', ":BufferLineCycleNext<CR>")
 vim.keymap.set('n', 'H', ":BufferLineCyclePrev<CR>")
+
+vim.keymap.set('i', '<C-e>', "<plug>(emmet-expand-abbr)")
