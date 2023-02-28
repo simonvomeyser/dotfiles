@@ -48,6 +48,9 @@ require('null-ls').setup({
 
 require('mason-null-ls').setup({ automatic_installation = true })
 
+--Commands
+vim.api.nvim_create_user_command('Format', vim.lsp.buf.format, {})
+
 -- Keymaps
 vim.keymap.set('n', '<Leader>d', '<cmd>lua vim.lsp.buf.definition()<CR>')
 vim.keymap.set('n', 'yd', '<cmd>lua vim.diagnostic.open_float()<CR>')
@@ -56,10 +59,9 @@ vim.keymap.set('n', 'yn', '<cmd>lua vim.diagnostic.goto_next()<CR>')
 vim.keymap.set('n', 'yi', ':Telescope lsp_implementations<CR>')
 vim.keymap.set('n', 'yr', ':Telescope lsp_references<CR>')
 vim.keymap.set('n', 'yk', '<cmd>lua vim.lsp.buf.hover()<CR>')
-vim.keymap.set('n', '<Leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
 
---Commands
-vim.api.nvim_create_user_command('Format', vim.lsp.buf.formatting, {})
+-- vim.keymap.set('n', '<Leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
+vim.keymap.set('n', '<Leader>r', ':Format<CR>')
 
 --Diagnostic configuration
 vim.diagnostic.config({
